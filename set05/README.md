@@ -2,7 +2,7 @@
 
 1. Write a program to find sum of two fractions
 
-***Function Definitions***
+***Function Declarations***
 ```c
 void input(int *num1, int *den1, int *num2, int *den2);
 void add(int num1, int den1, int num2, int den2, int *res_num, int *res_den);
@@ -24,7 +24,7 @@ void output(int num1, int den1, int num2, int den2, int res_num, int res_den);
 
 2. Write a program to find the smallest of three fractions
 
-***Function Definitions***
+***Function Declarations***
 ```c
 typedef struct {
     int num, den;
@@ -47,7 +47,7 @@ The smallest of 1/2, 1/3 and 1/4 is 1/4
 
 3. Write a program to find the `nCr` of given n and r
 
-***Function Definitions***
+***Function Declarations***
 ```
 void input_n_and_r(int *n, int *r);
 int nCr(int n, int r);
@@ -69,7 +69,7 @@ for n = 6 and r = 3, nCr = 20
 
 4. Write a program to evaluate a polynomial at a given point using [Horner's Method](https://en.wikipedia.org/wiki/Horner%27s_method#:~:text=Alternatively%2C%20Horner's%20method%20also%20refers,into%20general%20use%20around%201970.)
 
-***Function Definitions***
+***Function Declarations***
 ```c
 int input_degree();
 void input_coefficients(int n, float a[n]);
@@ -94,7 +94,7 @@ H(1, 1, 1) = 1.00 + 1.00 * 1.00^1 = 2.0000000
 
 5. Write a program to find the index of the largest number in an array
 
-***Function Definitions***
+***Function Declarations***
 ```c
 int input_size();
 void input_array(int n, int a[n]);
@@ -116,7 +116,7 @@ The index of the largest number in the array is. 2
 
 6. Write a program to count the number of words in a string using strtok (_string.h_)
 
-***Function Definitions***
+***Function Declarations***
 ```c
 void input_string(char *a);
 int count_words(char *string);
@@ -137,7 +137,7 @@ The number of words in "hello world hello" is 3
 
 7. Write a program to add two fractions
 
-***Function Definitions***
+***Function Declarations***
 ```c
 typedef struct {
     int num, den;
@@ -164,7 +164,7 @@ void output(Fraction f1, Fraction f2, Fraction f3, Fraction sum)
 
 8. Write a program to add n fractions
 
-***Function Definitions***
+***Function Declarations***
 ```c
 typedef struct fraction
 {
