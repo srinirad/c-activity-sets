@@ -1,7 +1,5 @@
 # Set 1
 
----
-
 1. Write a C program to print your name.
 
 ---
@@ -20,7 +18,19 @@ int add(int a, int b);
 void output(int a, int b, int sum);
 ```
 
-> _Input_ <br> > \> 1 <br> > \> 2 <br> > _Output_ <br> > \> The sum of 1 and 2 is 3
+_Input_ :
+
+```
+1
+2
+```
+
+_Output_ : 
+
+```
+The sum of 1 and 2 is 3
+
+```
 
 ---
 
@@ -34,9 +44,18 @@ void add(int a, int b, int *sum);
 void output(int a, int b, int sum);
 ```
 
-> _Input_ > \> 1
-> \> 2
-> _Output_ > \> The sum of 1 and 2 is 3.
+*Input* : 
+
+```
+1
+2
+```
+
+*Output :*
+
+```
+The sum of 1 and 2 is 3
+```
 
 ---
 
@@ -50,10 +69,20 @@ int compare(int a, int b, int c);
 void output(int a, int b, int c, int largest);
 ```
 
-> _Input_ > \> 1
-> \> 2
-> \> 3
-> _Output_ > \> The largest number of 1,2 and 3 is 3.
+_Input :_
+
+```
+1
+2
+3
+```
+
+_Output :_
+
+```
+The largest of 1,2 and 3 is 3.
+```
+
 
 ---
 
@@ -67,12 +96,22 @@ void compare(int a, int b, int c, int *largest);
 void output(int a, int b, int c, int largest);
 ```
 
-> _Input_ > \> 1
-> \> 1
-> \> 0
-> _Output_ > \> The largest number of 1,1 and 0 is 1.
+*Input :* 
+
+```
+1
+1
+0
+```
+
+*Output :*
+
+```
+1
+```
 
 ---
+
 
 7. Write a C program to find sum of all natural numbers till _n_.
 
@@ -84,8 +123,19 @@ int sum_n_nos(int n);
 void output(int n, int sum);
 ```
 
-> _Input_ > \> Enter N : 5
-> _Output_ > \> 1+2+3+4+5 is 15
+_Input :_
+```
+1
+2
+3
+```
+
+
+_Output :_
+
+```
+The largest of 1,2 and 3 is 3.
+```
 
 ---
 
@@ -100,10 +150,17 @@ int sum_n_array(int n, int a[n]);
 void output(int n, int a[n],int sum);
 ```
 
-> _Input_ > \> Input array size : 3
-> \> Input the array :
-> \> 1 7 11
-> _Output_ > \> 1+7+11 is 19
+ _Input_ :
+ ```
+Input array size : 3
+Input the array :
+1 7 11
+```
+
+_Output_ :
+```
+1+7+11 is 19
+```
 
 ---
 
@@ -117,8 +174,15 @@ float square_root(float n);
 void output(float n, float sqrroot);
 ```
 
-> _Input_ >\> Enter number : 49
-> _Output_ >\> Square root of 49.0 is 7.0
+_Input_ :
+```
+Enter number : 49
+```
+
+ _Output_ :
+ ```
+Square root of 49.0 is 7.0
+```
 
 ---
 
@@ -135,9 +199,15 @@ int stringcompare(char *string1, char *string2);
 void output(char *string1, char *string2, int result);
 ```
 
-> _Input_ > \> Enter the first string : hello
-> \> Enter the second string : world
-> _Output_ > \> world is greater than hello
+_Input_ :
+```
+Enter the first string : hello
+Enter the second string : world
+```
+_Output_ : 
+```
+world is greater than hello
+```
 
 ---
 
@@ -156,10 +226,15 @@ Complex add_complex(Complex a, Complex b);
 void output(Complex a, Complex b, Complex sum);
 ```
 
-> _Input_ > \> 2 3
-> \> 4 5
-> _Output_ > \> The sum of 2+3i and 4+5i is 6+8i
-
+_Input_ : 
+```
+2 3
+4 5
+```
+_Output_ :
+```
+The sum of 2+3i and 4+5i is 6+8i
+```
 ---
 
 12. Write a C program to find the sum of n complex numbers.
@@ -179,10 +254,15 @@ struct _complex
 	void output(int n, Complex c[n], Complex result);
 ```
 
-> _Input_ > \> 2
-> \> 2 3
-> \> 4 5
-> \> 6 7
-> _Output_ > \> 2+3i + 4+5i + 6+7i is 12+15i
-
+ _Input_ :
+ ```
+Enter the number of arrays : 3
+2 3
+4 5
+6 7
+```
+_Output_ :
+```
+2+3i + 4+5i + 6+7i is 12+15i
+```
 ---
