@@ -29,7 +29,6 @@ void output(int a, int b, int sum);
 
 ```
 The sum of 1 and 2 is 3
-
 ```
 
 ---
@@ -150,7 +149,7 @@ void output(int n, int a[n],int sum);
 ```
 
 ***Input***
- ```
+```
 Input array size: 3
 Input the array:
 1 7 11
@@ -178,7 +177,7 @@ Enter number: 49
 ```
 
 ***Output***
- ```
+```
 Square root of 49.0 is 7.0
 ```
 
