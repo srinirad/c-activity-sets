@@ -128,7 +128,7 @@ world
 
 ***Output***
 ```
-The index of world in helloworldhello is 5
+The index of 'world' in 'helloworldhello' is 5
 ```
 
 ---
@@ -137,13 +137,11 @@ The index of world in helloworldhello is 5
 
 ***Function Declarations**
 ```c
-typedef struct point
-{
+typedef struct point {
     float x, y;
 } Point;
 
-typedef struct line
-{
+typedef struct line {
     Point p1, p2;
     float distance;
 } Line;
@@ -162,7 +160,7 @@ void output(Line l);
 
 ***Output***
 ```
-The distance between point (1.000000,1.000000) and (2.000000,2.000000) is with 1.4142
+The distance between the points (1.000000,1.000000) and (2.000000,2.000000) is 1.4142
 ```
 
 ---
@@ -212,7 +210,7 @@ Enter the coordinates of point 4 (x,y):
 
 ***Output***
 ```
-The perimeter of the polynomial is: 4.000000
+The perimeter of the polynomial is 4.000000
 ```
 
 

@@ -48,7 +48,7 @@ The smallest of 1/2, 1/3 and 1/4 is 1/4
 3. Write a program to find the `nCr` of given n and r
 
 ***Function Declarations***
-```
+```c
 void input_n_and_r(int *n, int *r);
 int nCr(int n, int r);
 void output(int n, int r, int result);
@@ -81,7 +81,7 @@ void output(int n, float a[n], float x, float result);
 ***Input***
 ```
 1
-11
+1 1
 1
 ```
 
@@ -109,7 +109,7 @@ void output(int index);
 
 ***Output***
 ```
-The index of the largest number in the array is. 2
+The index of the largest number in the array is 2
 ```
 
 ---
@@ -176,7 +176,7 @@ Fraction input_fraction();
 void input_n_fractions(int n, Fraction f[n]);
 int find_gcd(int a, int b);
 Fraction add_fractions(Fraction f1, Fraction f2);
-Fraction add_n_fractions(int n,Fraction f[n]);
+Fraction add_n_fractions(int n, Fraction f[n]);
 void output(int n, Fraction f[n], Fraction sum);
 ```
 
