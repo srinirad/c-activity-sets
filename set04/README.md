@@ -135,7 +135,7 @@ The index of 'world' in 'helloworldhello' is 5
 
 7. Write a program to find the length of a line
 
-***Function Declarations**
+***Function Declarations***
 ```c
 typedef struct point {
     float x, y;
