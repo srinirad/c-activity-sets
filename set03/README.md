@@ -92,7 +92,7 @@ void output(int sum);
 
 ---
 
-05.  Write a program to find gcd (hcf) of two numbers.
+05.  Write a program to find GCD _(HCF)_ of two numbers.
 
 ***Function Declarations***
 ```c
@@ -139,9 +139,8 @@ olleh
 
 ***Function Declarations***
 ```c
-typedef struct _triangle
-{
-	float base,altitude,area;
+typedef struct _triangle {
+	float base, altitude, area;
 } Triangle;
 
 Triangle input_triangle();
@@ -166,9 +165,8 @@ The area of triangle wwith base = 2.000000 and altitude = 3.000000 is 3.000000
 
 ***Function Declarations***
 ```c
-typedef struct _triangle
-{
-	float base,altitude,area;
+typedef struct _triangle {
+	float base, altitude, area;
 } Triangle;
 int input_n();
 
