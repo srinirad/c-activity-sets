@@ -1,243 +1,190 @@
 # Set 2
 
-1.  Write a program to find the distance between two points.
+01.  Write a program to find the area of a triangle.
 
 ***Function Declarations***
-
 ```c
-struct _point {
-  float x;
-  float y;
-};
-
-typedef struct _point Point;
-
-Point input();
-void dist(Point a, Point b, float *res);
-void output(Point a, Point b, float res);
+void input(float base, float height);
+void find_area(float base , float height, float *area);
+void output(float base, float height, float area);
 ```
 
 ***Input***
-
 ```
-1.0 1.0
-2.0 2.0
+1
+2
 ```
 
 ***Output***
-
 ```
-The Distance between (1.0,1.0) and (2.0,2.0) is 1.0
+The area of the traingle with base 1.000000 and height 2.000000 is 1.000000
 ```
 
 ---
 
-2.  Write a program to find the weight of a camel, given height, length and stomach radius using four functions.
+02.  Write a program to find if a triangle is scalene.
 
-> `weight = pi * stomach_radius^3 * sqrt(height * length)`
-
-***Function Declarations***
-
-```c
-void input_camel_details(float *radius, float *height, float *length);
-float find_weight(float radius, float height, float length);
-void output(float radius, float height, float length, float weight);
-```
-
-***Input***
-
-```
-1
-1
-1
-```
-
-***Output***
-
-```
-The weight of the camel with radius: 1.0, height: 1.0, length: 1.0 is 3.1415
-```
-
----
-3.  Write a program to find the weight of the camel given height, length and stomach radius using four functions *(Structures)*
-
-> `weight = pi * stomach_radius^3 * sqrt(height * length)`
+> A triangle is scalene if all the three sides of the triangle are not equal to one another
 
 ***Function Declarations***
 ```c
-struct camel {
-	float radius, height, length,weight;
-};
-
-typedef struct camel Camel;
-
-Camel input();
-float find_weight(Camel c);  //pass by value
-//or
-void find_weight(Camel *c); //passing address variable
-void output(Camel c);
-```
-
-***Input***
-
-```
-1
-1
-1
-```
-
-***Output***
-
-```
-The weight of the camel with radius: 1.0, height: 1.0, length: 1.0 is 3.1415
-```
-
----
-
-4.  Write a program to find out the mood of a Camel.
-
-Camel is:
- - sick when its `stomach_radius` is less than `height` and less than `length`
- - happy when its `height` is less than `length` and less than `stomach_radius`.
- - tense when its `length` is less than `height` and `stomach_radius`.
-
-***Function Declarations***
-
-```c
-void input_camel_details(float *radius, float *height, float *length);
-int find_mood(float radius, float height, float length)
-void output(float radius, float height, float length, int mood);
+int input_side();
+int check_scalene(int a, int b, int c);
+void output(int a, int b, int c, int isscalene);
 ```
 
 ***Input***
 ```
 5
-2
+4
+5
+```
+
+***Output***
+```
+The triangle with sides 5, 4 and 5 is not scalene
+```
+
+---
+
+03.  Write a program find whether a number is a composite number
+
+> A Composite number has more than 2 factors.
+
+***Function Declarations***
+```c
+int input_number();
+int is_composite(int n);
+void output(int n, int result);
+```
+
+***Input***
+```
+8
+```
+
+***Output***
+```
+8 is a composite number.
+```
+
+---
+
+04.  Write a program to find Sum of composite number in an array of different numbers entered by the user.
+
+***Function Declarations***
+```c
+int input_array_size();
+void input_array(int n, int a[n]);
+int sum_composite_numbers(int n, int a[n]);
+void output(int sum);
+```
+
+***Input***
+```
+1 2 7 8 12
+```
+
+***Output***
+```
+2o
+```
+
+---
+
+05.  Write a program to find GCD _(HCF)_ of two numbers.
+
+***Function Declarations***
+```c
+int input();
+int find_gcd(int a, int b);
+void output(int a, int b, int gcd);
+```
+
+***Input***
+```
+12
+16
+```
+
+***Output***
+```
 4
 ```
 
-***Output***
-```
-The Camel is Happy
-```
-
 ---
 
-5.  Write a program to find borga(x) given x.
-
-> The formula for finding borga(x) is `1 + (x^1)/3! + (x^2)/5! + (x^3)/7! + ...`. Stop when the next term is less 0.000001 using four functions.
-
-```c
-int input(int x);
-float borga_X(int x);
-void output(int x, float result);
-```
-
-***Input***
-```
-5
-```
-
-***Output***
-```
-borga(5) = 2.699337
-```
-
----
-
-6.  Write a program to find the average of all the odd elements in an array
+06. Write a program to reverse a string.
 
 ***Function Declarations***
 ```c
-int input_n();
-void input(int n, int a[n]);
-float odd_average(int n, int a[n]);
-void output(float avg);
+void input_string(char *a);
+void str_reverse(char *str, char *rev_str);
+void output(char *a, char *reverse_a);
 ```
 
 ***Input***
 ```
-5
-5 4 3 8 0
+hello
 ```
 
 ***Output***
 ```
-Average of all the odd elements is: 4
+olleh
 ```
 
 ---
 
-7.  Write a program to find out if the name of the camel is a nice name.
-
-> A camel has a nice name if it has at least 2 vowels and 2 consonants in it
+07. Write a program to find the area of a triangle.
 
 ***Function Declarations***
 ```c
-void input(char *name);
-int has_nice_name(char *c);
-void output(int res);
+typedef struct _triangle {
+	float base, altitude, area;
+} Triangle;
+
+Triangle input_triangle();
+void find_area(Traingle *t);
+void output(Triangle t);
 ```
 
 ***Input***
 ```
-Conky
-```
-
-***Output***
-```
-The camel does not have a nice name
-```
-
----
-
-8.  Write program to find the weight of a truck load of n camels.
-
-Take inputs for:
-- truck weight
-- height, radius and length of n different camels
-
-> `total_truck_weight = truck_weight + weight_of_camels`
-
-***Function Declarations***
-```c
-typedef struct _camel {
-    float radius, height, length, weight;
-} Camel;
-
-void input(int n, Camel c[n], float *truck_weight);
-void find_camel_weight(int n, Camel c[n]);
-float compute_total_weight(int n, Camel c[n], float truck_weight);
-void output(float total_weight);
-```
-
-***Input***
-```
-Enter the number of camels:
+2
 3
-Enter the height of camel no. 1:
-1
-Enter the length of camel no. 1:
-1
-Enter the radius of camel no. 1:
-1
-Enter the height of camel no. 2:
-1
-Enter the length of camel no. 2:
-1
-Enter the radius of camel no. 2:
-1
-Enter the height of camel no. 3:
-1
-Enter the length of camel no. 3:
-1
-Enter the radius of camel no. 3:
-1
-Enter the weight of the truck:
-2000
 ```
 
 ***Output***
 ```
-The Total weight of the truck is: 2009.424561
+The area of triangle wwith base = 2.000000 and altitude = 3.000000 is 3.000000
+```
+
+---
+
+08. Write a program to find the triangle with smallest area in n given triangles.
+
+***Function Declarations***
+```c
+typedef struct _triangle {
+	float base, altitude, area;
+} Triangle;
+int input_n();
+
+Triangle input_triangle();
+void input_n_triangles(int n, Triangle t[n]);
+void find_area(Triangle *t);
+void find_n_areas(int n, Triangle t[n]);
+Triangle find_smallest_triangle(int n, Triangle t[n]);
+void output(int n, Triangle t[n], Triangle smallest);
+```
+
+***Input***
+```
+2 3
+4 6
+```
+
+***Output***
+```
+The smallest triangle out of triangles with base and height (2,3) , (4,6) is the triangle having base 2.00, height 3.00 and area 3.00
 ```

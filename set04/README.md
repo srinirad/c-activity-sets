@@ -1,217 +1,194 @@
-# Set 04
+# Set 5
 
-1. Write a program to find the distance between 2 points
+1. Write a program to find sum of two fractions
 
 ***Function Declarations***
 ```c
-void input(float *x1, float *y1, float *x2, float *y2);
-float find_distance(float x1, float y1, float x2, float y2);
-void output(float x1, float y1, float x2, float y2, float distance);
+void input(int *num1, int *den1, int *num2, int *den2);
+void add(int num1, int den1, int num2, int den2, int *res_num, int *res_den);
+void output(int num1, int den1, int num2, int den2, int res_num, int res_den);
 ```
 
 ***Input***
 ```
-1 1
-2 2
+1 4
+1 2
 ```
 
 ***Output***
 ```
-The distance between point (1.0000000, 1.0000000) and (2.0000000, 2.0000000) is 1.4142
+1/2 + 1/4 = 3/4
 ```
 
 ---
 
-2. Write a program to find whether the given 3 points form a triangle
+2. Write a program to find the smallest of three fractions
 
 ***Function Declarations***
 ```c
-void input_triangle(float *x1, float *y1, float *x2, float *y2, float *x3, float *y3);
-int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3);
-void output(float x1, float y1, float x2, float y2,float x3, float y3, int result);
+typedef struct {
+    int num, den;
+} Fraction;
 ```
 
 ***Input***
 ```
-1 1
-0 0
-1 1
+1 2
+1 3
+1 4
 ```
 
 ***Output***
 ```
-The points (1.0, 1.0), (0.0, 0.0) and (1.0, 1.0) do not form a triangle
+The smallest of 1/2, 1/3 and 1/4 is 1/4
 ```
 
 ---
 
-3. Write a program to check if the given number is prime
+3. Write a program to find the `nCr` of given n and r
 
 ***Function Declarations***
 ```c
-int input_number();
-int is_prime(int n);
-void output(int n, int result);
+void input_n_and_r(int *n, int *r);
+int nCr(int n, int r);
+void output(int n, int r, int result);
 ```
 
 ***Input***
 ```
+6
 3
 ```
 
 ***Output***
 ```
-3 is a prime number
+for n = 6 and r = 3, nCr = 20
 ```
 
 ---
 
-4. Write a program to find nth number in fibonacci sequence.
-
-> Fibonacci Sequence is of the form: `0, 1, 1, 2, 3, 5, 8, 13, ...`
+4. Write a program to evaluate a polynomial at a given point using [Horner's Method](https://en.wikipedia.org/wiki/Horner%27s_method#:~:text=Alternatively%2C%20Horner's%20method%20also%20refers,into%20general%20use%20around%201970.)
 
 ***Function Declarations***
 ```c
-int input();
-int find_fibo(int n);
-void output(int n, int fibo);
+int input_degree();
+void input_coefficients(int n, float a[n]);
+float input_x();
+float evaluate_polynomial(int n, float a[n], float x);
+void output(int n, float a[n], float x, float result);
 ```
 
 ***Input***
 ```
-5
-```
-
-***Output***
-```
-fibo(5) = 5
-```
-
----
-
-5. Write a program to find all the prime numbers between 2 to n Eratosthenes Sieve method.
-
-***Function Declarations***
-```c
-int input_array_size();
-void init_array(int n, int a[n];
-void erotosthenes_sieve(int n, int a[n]);
-void output(int n, int a[n]);
-```
-
-***Input***
-```
-35
-```
-
-***Output***
-```
-2, 3, 7, 11, 13, 19, 23, 29, 31
-```
-
----
-
-6. Write a program to find the index of a substring of a string
-
-***Function Declarations***
-```c
-void input_string(char* a, char* b);
-int sub_str_index(char* string, char* substring);
-void output(char *string, char *substring, int index);
-```
-
-***Input***
-```
-helloworldhello
-world
-```
-
-***Output***
-```
-The index of 'world' in 'helloworldhello' is 5
-```
-
----
-
-7. Write a program to find the length of a line
-
-***Function Declarations***
-```c
-typedef struct point {
-    float x, y;
-} Point;
-
-typedef struct line {
-    Point p1, p2;
-    float distance;
-} Line;
-
-Point input_point();
-Line input_line();
-void find_length(Line *l);
-void output(Line l);
-```
-
-***Input***
-```
+1
 1 1
-2 2
+1
 ```
 
 ***Output***
 ```
-The distance between the points (1.000000,1.000000) and (2.000000,2.000000) is 1.4142
+H(1, 1, 1) = 1.00 + 1.00 * 1.00^1 = 2.0000000
 ```
 
 ---
 
-8. Write a program to find the permeter of a polygon
+5. Write a program to find the index of the largest number in an array
 
 ***Function Declarations***
 ```c
-typedef struct point {
-    float start_end_x, start_end_y;
-} Point;
+int input_size();
+void input_array(int n, int a[n]);
+int find_largest_index(int n, int a[n]);
+void output(int index);
+```
 
-typedef struct line {
-    Point p;
-    float distance;
-} Line;
+***Input***
+```
+4 2 9 1 7
+```
 
-typedef struct polygon {
-    int sides;
-    Line l[100];
-    float perimeter;
-} Polygon;
+***Output***
+```
+The index of the largest number in the array is 2
+```
+
+---
+
+6. Write a program to count the number of words in a string using strtok (_string.h_)
+
+***Function Declarations***
+```c
+void input_string(char *a);
+int count_words(char *string);
+void output(char *string, int no_words);
+```
+
+***Input***
+```
+hello world hello
+```
+
+***Output***
+```
+The number of words in "hello world hello" is 3
+```
+
+---
+
+7. Write a program to add two fractions
+
+***Function Declarations***
+```c
+typedef struct {
+    int num, den;
+} Fraction;
+
+Fraction input_fraction();
+int find_gcd(int a, int b);
+Fraction add_fractions(Fraction f1, Fraction f2)
+void output(Fraction f1, Fraction f2, Fraction f3, Fraction sum)
+```
+
+***Input***
+```
+9 6
+5 6
+```
+
+***Output***
+```
+9/6 + 5/6 = 7/3
+```
+
+---
+
+8. Write a program to add n fractions
+
+***Function Declarations***
+```c
+typedef struct fraction
+{
+    int num, den;
+} Fraction;
 
 int input_n();
-Line input_line(int n);
-void input_n_lines(int n, Line *l);
-int input_polygon(Polygon *p);
-float find_distance(Point a, Point b);
-void find_n_distance(int n, Line *l);
-void find_perimeter(Polygon* p);
-void output(Polygon p);
+Fraction input_fraction();
+void input_n_fractions(int n, Fraction f[n]);
+int find_gcd(int a, int b);
+Fraction add_fractions(Fraction f1, Fraction f2);
+Fraction add_n_fractions(int n, Fraction f[n]);
+void output(int n, Fraction f[n], Fraction sum);
 ```
 
 ***Input***
 ```
-Enter the number of sides of the polygon:
-4
-Enter the coordinates of point 1 (x,y):
-0 0
-Enter the coordinates of point 2 (x,y):
-1 0
-Enter the coordinates of point 3 (x,y):
-1 1
-Enter the coordinates of point 4 (x,y):
-0 1
+3
+4 3
+8 9
+1 2
 ```
 
 ***Output***
 ```
-The perimeter of the polynomial is 4.000000
+4/3 + 8/9 + 1/2 = 49/18
 ```
-
-
-

@@ -1,190 +1,217 @@
-# Set 3
+# Set 04
 
-01.  Write a program to find the area of a triangle.
+1. Write a program to find the distance between 2 points
 
 ***Function Declarations***
 ```c
-void input(float base, float height);
-void find_area(float base , float height, float *area);
-void output(float base, float height, float area);
+void input(float *x1, float *y1, float *x2, float *y2);
+float find_distance(float x1, float y1, float x2, float y2);
+void output(float x1, float y1, float x2, float y2, float distance);
 ```
 
 ***Input***
 ```
-1
-2
+1 1
+2 2
 ```
 
 ***Output***
 ```
-The area of the traingle with base 1.000000 and height 2.000000 is 1.000000
+The distance between point (1.0000000, 1.0000000) and (2.0000000, 2.0000000) is 1.4142
 ```
 
 ---
 
-02.  Write a program to find if a triangle is scalene.
-
-> A triangle is scalene if all the three sides of the triangle are not equal to one another
+2. Write a program to find whether the given 3 points form a triangle
 
 ***Function Declarations***
 ```c
-int input_side();
-int check_scalene(int a, int b, int c);
-void output(int a, int b, int c, int isscalene);
+void input_triangle(float *x1, float *y1, float *x2, float *y2, float *x3, float *y3);
+int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3);
+void output(float x1, float y1, float x2, float y2,float x3, float y3, int result);
 ```
 
 ***Input***
 ```
-5
-4
-5
+1 1
+0 0
+1 1
 ```
 
 ***Output***
 ```
-The triangle with sides 5, 4 and 5 is not scalene
+The points (1.0, 1.0), (0.0, 0.0) and (1.0, 1.0) do not form a triangle
 ```
 
 ---
 
-03.  Write a program find whether a number is a composite number
-
-> A Composite number has more than 2 factors.
+3. Write a program to check if the given number is prime
 
 ***Function Declarations***
 ```c
 int input_number();
-int is_composite(int n);
+int is_prime(int n);
 void output(int n, int result);
 ```
 
 ***Input***
 ```
-8
-```
-
-***Output***
-```
-8 is a composite number.
-```
-
----
-
-04.  Write a program to find Sum of composite number in an array of different numbers entered by the user.
-
-***Function Declarations***
-```c
-int input_array_size();
-void input_array(int n, int a[n]);
-int sum_composite_numbers(int n, int a[n]);
-void output(int sum);
-```
-
-***Input***
-```
-1 2 7 8 12
-```
-
-***Output***
-```
-2o
-```
-
----
-
-05.  Write a program to find GCD _(HCF)_ of two numbers.
-
-***Function Declarations***
-```c
-int input();
-int find_gcd(int a, int b);
-void output(int a, int b, int gcd);
-```
-
-***Input***
-```
-12
-16
-```
-
-***Output***
-```
-4
-```
-
----
-
-06. Write a program to reverse a string.
-
-***Function Declarations***
-```c
-void input_string(char *a);
-void str_reverse(char *str, char *rev_str);
-void output(char *a, char *reverse_a);
-```
-
-***Input***
-```
-hello
-```
-
-***Output***
-```
-olleh
-```
-
----
-
-07. Write a program to find the area of a triangle.
-
-***Function Declarations***
-```c
-typedef struct _triangle {
-	float base, altitude, area;
-} Triangle;
-
-Triangle input_triangle();
-void find_area(Traingle *t);
-void output(Triangle t);
-```
-
-***Input***
-```
-2
 3
 ```
 
 ***Output***
 ```
-The area of triangle wwith base = 2.000000 and altitude = 3.000000 is 3.000000
+3 is a prime number
 ```
 
 ---
 
-08. Write a program to find the triangle with smallest area in n given triangles.
+4. Write a program to find nth number in fibonacci sequence.
+
+> Fibonacci Sequence is of the form: `0, 1, 1, 2, 3, 5, 8, 13, ...`
 
 ***Function Declarations***
 ```c
-typedef struct _triangle {
-	float base, altitude, area;
-} Triangle;
-int input_n();
-
-Triangle input_triangle();
-void input_n_triangles(int n, Triangle t[n]);
-void find_area(Triangle *t);
-void find_n_areas(int n, Triangle t[n]);
-Triangle find_smallest_triangle(int n, Triangle t[n]);
-void output(int n, Triangle t[n], Triangle smallest);
+int input();
+int find_fibo(int n);
+void output(int n, int fibo);
 ```
 
 ***Input***
 ```
-2 3
-4 6
+5
 ```
 
 ***Output***
 ```
-The smallest triangle out of triangles with base and height (2,3) , (4,6) is the triangle having base 2.00, height 3.00 and area 3.00
+fibo(5) = 5
 ```
+
+---
+
+5. Write a program to find all the prime numbers between 2 to n Eratosthenes Sieve method.
+
+***Function Declarations***
+```c
+int input_array_size();
+void init_array(int n, int a[n];
+void erotosthenes_sieve(int n, int a[n]);
+void output(int n, int a[n]);
+```
+
+***Input***
+```
+35
+```
+
+***Output***
+```
+2, 3, 7, 11, 13, 19, 23, 29, 31
+```
+
+---
+
+6. Write a program to find the index of a substring of a string
+
+***Function Declarations***
+```c
+void input_string(char* a, char* b);
+int sub_str_index(char* string, char* substring);
+void output(char *string, char *substring, int index);
+```
+
+***Input***
+```
+helloworldhello
+world
+```
+
+***Output***
+```
+The index of 'world' in 'helloworldhello' is 5
+```
+
+---
+
+7. Write a program to find the length of a line
+
+***Function Declarations***
+```c
+typedef struct point {
+    float x, y;
+} Point;
+
+typedef struct line {
+    Point p1, p2;
+    float distance;
+} Line;
+
+Point input_point();
+Line input_line();
+void find_length(Line *l);
+void output(Line l);
+```
+
+***Input***
+```
+1 1
+2 2
+```
+
+***Output***
+```
+The distance between the points (1.000000,1.000000) and (2.000000,2.000000) is 1.4142
+```
+
+---
+
+8. Write a program to find the permeter of a polygon
+
+***Function Declarations***
+```c
+typedef struct point {
+    float start_end_x, start_end_y;
+} Point;
+
+typedef struct line {
+    Point p;
+    float distance;
+} Line;
+
+typedef struct polygon {
+    int sides;
+    Line l[100];
+    float perimeter;
+} Polygon;
+
+int input_n();
+Line input_line(int n);
+void input_n_lines(int n, Line *l);
+int input_polygon(Polygon *p);
+float find_distance(Point a, Point b);
+void find_n_distance(int n, Line *l);
+void find_perimeter(Polygon* p);
+void output(Polygon p);
+```
+
+***Input***
+```
+Enter the number of sides of the polygon:
+4
+Enter the coordinates of point 1 (x,y):
+0 0
+Enter the coordinates of point 2 (x,y):
+1 0
+Enter the coordinates of point 3 (x,y):
+1 1
+Enter the coordinates of point 4 (x,y):
+0 1
+```
+
+***Output***
+```
+The perimeter of the polynomial is 4.000000
+```
+
+
+

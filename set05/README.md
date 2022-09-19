@@ -1,194 +1,243 @@
-# Set 5
+# Set 05
 
-1. Write a program to find sum of two fractions
+1.  Write a program to find the distance between two points.
 
 ***Function Declarations***
+
 ```c
-void input(int *num1, int *den1, int *num2, int *den2);
-void add(int num1, int den1, int num2, int den2, int *res_num, int *res_den);
-void output(int num1, int den1, int num2, int den2, int res_num, int res_den);
+struct _point {
+  float x;
+  float y;
+};
+
+typedef struct _point Point;
+
+Point input();
+void dist(Point a, Point b, float *res);
+void output(Point a, Point b, float res);
 ```
 
 ***Input***
+
 ```
-1 4
-1 2
+1.0 1.0
+2.0 2.0
 ```
 
 ***Output***
+
 ```
-1/2 + 1/4 = 3/4
+The Distance between (1.0,1.0) and (2.0,2.0) is 1.0
 ```
 
 ---
 
-2. Write a program to find the smallest of three fractions
+2.  Write a program to find the weight of a camel, given height, length and stomach radius using four functions.
+
+> `weight = pi * stomach_radius^3 * sqrt(height * length)`
 
 ***Function Declarations***
+
 ```c
-typedef struct {
-    int num, den;
-} Fraction;
+void input_camel_details(float *radius, float *height, float *length);
+float find_weight(float radius, float height, float length);
+void output(float radius, float height, float length, float weight);
 ```
 
 ***Input***
-```
-1 2
-1 3
-1 4
-```
 
-***Output***
-```
-The smallest of 1/2, 1/3 and 1/4 is 1/4
-```
-
----
-
-3. Write a program to find the `nCr` of given n and r
-
-***Function Declarations***
-```c
-void input_n_and_r(int *n, int *r);
-int nCr(int n, int r);
-void output(int n, int r, int result);
-```
-
-***Input***
-```
-6
-3
-```
-
-***Output***
-```
-for n = 6 and r = 3, nCr = 20
-```
-
----
-
-4. Write a program to evaluate a polynomial at a given point using [Horner's Method](https://en.wikipedia.org/wiki/Horner%27s_method#:~:text=Alternatively%2C%20Horner's%20method%20also%20refers,into%20general%20use%20around%201970.)
-
-***Function Declarations***
-```c
-int input_degree();
-void input_coefficients(int n, float a[n]);
-float input_x();
-float evaluate_polynomial(int n, float a[n], float x);
-void output(int n, float a[n], float x, float result);
-```
-
-***Input***
 ```
 1
-1 1
+1
 1
 ```
 
 ***Output***
+
 ```
-H(1, 1, 1) = 1.00 + 1.00 * 1.00^1 = 2.0000000
+The weight of the camel with radius: 1.0, height: 1.0, length: 1.0 is 3.1415
+```
+
+---
+3.  Write a program to find the weight of the camel given height, length and stomach radius using four functions *(Structures)*
+
+> `weight = pi * stomach_radius^3 * sqrt(height * length)`
+
+***Function Declarations***
+```c
+struct camel {
+	float radius, height, length,weight;
+};
+
+typedef struct camel Camel;
+
+Camel input();
+float find_weight(Camel c);  //pass by value
+//or
+void find_weight(Camel *c); //passing address variable
+void output(Camel c);
+```
+
+***Input***
+
+```
+1
+1
+1
+```
+
+***Output***
+
+```
+The weight of the camel with radius: 1.0, height: 1.0, length: 1.0 is 3.1415
 ```
 
 ---
 
-5. Write a program to find the index of the largest number in an array
+4.  Write a program to find out the mood of a Camel.
+
+Camel is:
+ - sick when its `stomach_radius` is less than `height` and less than `length`
+ - happy when its `height` is less than `length` and less than `stomach_radius`.
+ - tense when its `length` is less than `height` and `stomach_radius`.
 
 ***Function Declarations***
+
 ```c
-int input_size();
-void input_array(int n, int a[n]);
-int find_largest_index(int n, int a[n]);
-void output(int index);
+void input_camel_details(float *radius, float *height, float *length);
+int find_mood(float radius, float height, float length)
+void output(float radius, float height, float length, int mood);
 ```
 
 ***Input***
 ```
-4 2 9 1 7
+5
+2
+4
 ```
 
 ***Output***
 ```
-The index of the largest number in the array is 2
+The Camel is Happy
 ```
 
 ---
 
-6. Write a program to count the number of words in a string using strtok (_string.h_)
+5.  Write a program to find borga(x) given x.
 
-***Function Declarations***
+> The formula for finding borga(x) is `1 + (x^1)/3! + (x^2)/5! + (x^3)/7! + ...`. Stop when the next term is less 0.000001 using four functions.
+
 ```c
-void input_string(char *a);
-int count_words(char *string);
-void output(char *string, int no_words);
+int input(int x);
+float borga_X(int x);
+void output(int x, float result);
 ```
 
 ***Input***
 ```
-hello world hello
+5
 ```
 
 ***Output***
 ```
-The number of words in "hello world hello" is 3
+borga(5) = 2.699337
 ```
 
 ---
 
-7. Write a program to add two fractions
+6.  Write a program to find the average of all the odd elements in an array
 
 ***Function Declarations***
 ```c
-typedef struct {
-    int num, den;
-} Fraction;
-
-Fraction input_fraction();
-int find_gcd(int a, int b);
-Fraction add_fractions(Fraction f1, Fraction f2)
-void output(Fraction f1, Fraction f2, Fraction f3, Fraction sum)
-```
-
-***Input***
-```
-9 6
-5 6
-```
-
-***Output***
-```
-9/6 + 5/6 = 7/3
-```
-
----
-
-8. Write a program to add n fractions
-
-***Function Declarations***
-```c
-typedef struct fraction
-{
-    int num, den;
-} Fraction;
-
 int input_n();
-Fraction input_fraction();
-void input_n_fractions(int n, Fraction f[n]);
-int find_gcd(int a, int b);
-Fraction add_fractions(Fraction f1, Fraction f2);
-Fraction add_n_fractions(int n, Fraction f[n]);
-void output(int n, Fraction f[n], Fraction sum);
+void input(int n, int a[n]);
+float odd_average(int n, int a[n]);
+void output(float avg);
 ```
 
 ***Input***
 ```
-3
-4 3
-8 9
-1 2
+5
+5 4 3 8 0
 ```
 
 ***Output***
 ```
-4/3 + 8/9 + 1/2 = 49/18
+Average of all the odd elements is: 4
+```
+
+---
+
+7.  Write a program to find out if the name of the camel is a nice name.
+
+> A camel has a nice name if it has at least 2 vowels and 2 consonants in it
+
+***Function Declarations***
+```c
+void input(char *name);
+int has_nice_name(char *c);
+void output(int res);
+```
+
+***Input***
+```
+Conky
+```
+
+***Output***
+```
+The camel does not have a nice name
+```
+
+---
+
+8.  Write program to find the weight of a truck load of n camels.
+
+Take inputs for:
+- truck weight
+- height, radius and length of n different camels
+
+> `total_truck_weight = truck_weight + weight_of_camels`
+
+***Function Declarations***
+```c
+typedef struct _camel {
+    float radius, height, length, weight;
+} Camel;
+
+void input(int n, Camel c[n], float *truck_weight);
+void find_camel_weight(int n, Camel c[n]);
+float compute_total_weight(int n, Camel c[n], float truck_weight);
+void output(float total_weight);
+```
+
+***Input***
+```
+Enter the number of camels:
+3
+Enter the height of camel no. 1:
+1
+Enter the length of camel no. 1:
+1
+Enter the radius of camel no. 1:
+1
+Enter the height of camel no. 2:
+1
+Enter the length of camel no. 2:
+1
+Enter the radius of camel no. 2:
+1
+Enter the height of camel no. 3:
+1
+Enter the length of camel no. 3:
+1
+Enter the radius of camel no. 3:
+1
+Enter the weight of the truck:
+2000
+```
+
+***Output***
+```
+The Total weight of the truck is: 2009.424561
 ```
