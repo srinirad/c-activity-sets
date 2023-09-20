@@ -38,7 +38,7 @@ The sum of 1 and 2 is 3
 ***Function Declarations***
 
 ```c
-int input();
+void input(int *a, int *b);
 void add(int a, int b, int *sum);
 void output(int a, int b, int sum);
 ```
@@ -90,7 +90,7 @@ The largest of 1,2 and 3 is 3.
 ***Function Declarations***
 
 ```c
-int input();
+int input(int *a, int *b, int *c);
 void compare(int a, int b, int c, int *largest);
 void output(int a, int b, int c, int largest);
 ```
