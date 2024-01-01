@@ -204,7 +204,7 @@ Enter the coordinates of point 4 (x,y):
 
 ***Output***
 ```
-The perimeter of the polynomial is 4.000000
+The perimeter of the polygon is 4.000000
 ```
 
 
