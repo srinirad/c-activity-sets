@@ -175,8 +175,8 @@ Average of all the odd elements is: 4
 ***Function Declarations***
 ```c
 void input(char *name);
-int has_nice_name(char *c);
-void output(int res);
+int has_nice_name(char *name);
+void output(char *name int res);
 ```
 
 ***Input***
@@ -186,7 +186,7 @@ Conky
 
 ***Output***
 ```
-The camel does not have a nice name
+The camel Conky not have a nice name
 ```
 
 ---
