@@ -132,7 +132,7 @@ void output(int n, int sum);
 
 ***Output***
 ```
-The largest of 1,2 and 3 is 3.
+The sum of  1+2+3 is 6.
 ```
 
 ---
